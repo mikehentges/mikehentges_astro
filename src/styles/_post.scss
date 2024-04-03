@@ -1,0 +1,39 @@
+section {
+    display: grid;
+    grid-template-columns: [full-start] minmax(4vmin,auto) 
+    [wide-start] minmax(auto,240px) 
+    [main-start] min(720px, calc(100% - 8vw)) 
+    [main-end] minmax(auto,240px) 
+    [wide-end] minmax(4vmin,auto) 
+    [full-end];
+
+    * {
+        grid-column: main-start/main-end;
+    }
+
+    p, li {
+        font-size: $post-font-size;
+        font-family: $font-post;
+        margin-block-start: 0;
+    }
+
+    li {
+        padding-bottom: .5em;
+    }
+    .hero {
+        margin-top: 1rem;
+        width: 100%;
+        object-fit: contain;
+        
+    }
+    img {
+        margin-top: 1rem;
+        
+    }
+    img.center {
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}

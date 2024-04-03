@@ -1,0 +1,77 @@
+@import 'variables';
+@import 'mixins';
+@import 'card';
+@import 'header';
+@import 'main-title';
+@import 'footer';
+@import 'post';
+@import 'category_list';
+@import 'monokai';
+
+#content {
+    margin-top: 100px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fonts;
+    background-color: white;
+    min-height: 100vh;
+    --x-height-multiplier: 0.375;
+    --baseline-multiplier: 0.17;
+    line-height: 1.58;
+    letter-spacing: -.004em;
+    //@include flex-center();
+    margin: 0;
+    //margin-top: 50px;
+
+
+}
+
+/*     @include flex-center(); */
+
+bottom {
+    position: relative;
+    display: block;
+
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -.015em;
+    line-height: 1.15;
+    text-rendering: optimizeLegibility;
+}
+
+p {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.bottom-title {
+    padding: 20px 40px 0px 40px;
+    font-size: 2rem;
+}
+
+.page-content {
+    display: grid;
+    grid-template-columns: [full-start] minmax(4vmin, auto) [wide-start] minmax(auto, 240px) [main-start] min(720px, calc(100% - 8vw)) [main-end] minmax(auto, 240px) [wide-end] minmax(4vmin, auto) [full-end];
+    font-size: 1rem;
+
+    * {
+        grid-column: main-start/main-end;
+    }
+
+    p {
+        font-size: $post-font-size;
+        font-family: $font-post;
+    }
+}
+
+code {
+    font-size: 1.3rem;
+}

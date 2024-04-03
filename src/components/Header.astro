@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  site_title: string;
+}
+
+const { site_title } = Astro.props as Props;
+const allPosts: CollectionEntry<"posts">[] = await getCollection("posts");
+const uniqueCategories = [
+  ...new Set(allPosts.flatMap((post) => post.data.categories).flat()),
+];
+---
+
+<header>
+  <link rel="icon" type="image/x-icon" href="/logo-color.ico" />
+
+  <div class="header_title">{site_title}</div>
+  <div class="header_menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      {
+        uniqueCategories.map((tag) => (
+          <li>
+            <a class="category_menu_item" href={tag}>
+              {tag}
+            </a>
+          </li>
+        ))
+      }
+
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
+</header>

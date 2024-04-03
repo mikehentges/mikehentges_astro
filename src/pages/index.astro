@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const siteTitle = "Hentges.AI";
+const allPosts: CollectionEntry<"posts">[] = await getCollection("posts");
+function compare_post_dates(
+	a: CollectionEntry<"posts">,
+	b: CollectionEntry<"posts">,
+) {
+	if (a.data.date < b.data.date) {
+		return 1;
+	}
+	if (a.data.date > b.data.date) {
+		return -1;
+	}
+	return 0;
+}
+const recentPosts: CollectionEntry<"posts">[] = allPosts
+	.sort(compare_post_dates)
+	.slice(0, 3);
+
+function cardClick(event: MouseEvent) {
+	event.stopPropagation();
+	alert("Card clicked!");
+}
+---
+
+<BaseLayout pageTitle={siteTitle}>
+	<div class="main-title">
+		<h1>{siteTitle}</h1>
+		<p>Technology, Programming, Chess, and Woodworking!</p>
+	</div>
+	<div class="bottom">
+		<div class="bottom-title">Recent Posts:</div>
+		<div class="home-card-collection">
+			{
+				recentPosts.map((post) => (
+					<div
+						class="home_card"
+						onclick={"window.location.href = " + post.slug}
+					>
+						<a
+							class="category_link"
+							onclick="cardClick"
+							href={post.data.categories}
+						>
+							{post.data.categories}
+						</a>
+						<a class="heading_link" onclick="cardClick" href={post.slug}>
+							{post.data.title}
+						</a>
+						<img src={post.data.hero} />
+						<div class="card_content">{post.data.summary}...</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</BaseLayout>
