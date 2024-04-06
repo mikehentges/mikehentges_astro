@@ -42,7 +42,7 @@ I intended this to be a hobby project – not a commercial production-ready impl
 
 The following diagram depicts the system architecture for the solution:
 
-<img src="https://res.cloudinary.com/dbzsk4ytb/image/upload/c_scale,w_800/v1664843918/blog-images/sys-arch.drawio_rrv2ju.png" alt="DTMF IVR" />
+<img src="https://res.cloudinary.com/dbzsk4ytb/image/upload/c_scale,w_800/v1664843918/blog-images/sys-arch.drawio_rrv2ju.png" alt="system diagram for thermostat application" />
 
 The subsystems of the application are as follows:
 

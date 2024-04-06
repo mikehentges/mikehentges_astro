@@ -14,14 +14,14 @@ As I watch the contact center industry promote everything and anything AI, I’m
 AI-based systems, when appropriately utilized, have tangible benefits, especially when compared to the older speech-recognition-based IVR systems (or, heaven forbid, touch-tone DTMF systems), they are replacing. But I feel we are doing a disservice to AI when we don’t describe how the AI part makes the system better.
 
 <p align="center">
-<img src="https://res.cloudinary.com/dbzsk4ytb/image/upload/c_scale,h_300/v1664816102/blog-images/dtmf-ivr_qlupkt.svg" alt="DTMF IVR" height="300"/></p>
+<img src="https://res.cloudinary.com/dbzsk4ytb/image/upload/c_scale,h_300/v1664816102/blog-images/dtmf-ivr_qlupkt.svg" alt="DTMF IVR" height="300" alt="touch-tone menu"/></p>
 
 First, let me share a little history. IVR (Interactive Voice Response) is a technology that has been around for 40 years. At first, these systems accepted touch-tone (DTMF) input, the ubiquitous “press 1 for sales, 2 for customer service….” call directing systems that replaced human operators. Then, the systems allowed data entry over the phone (“enter your account number…”). Back-end data transactions (screen-scraping mainframe terminal screens at first, then more modern API methods) would pull data to the caller for self-service (“your current balance is …”). The return on investment for these systems was straightforward: $5.00 per minute for a human agent interaction vs. $.25 per minute for an IVR interaction (typical costs in the 1990s). If you could automate a high enough percentage of calls, the IVR systems would pay for themselves in months.
 
 Some industries, like retail banking, could see call automation rates over 90%. The cost avoidance potential made IVR systems must-have tools for call centers. They were great at cost reduction – but terrible for customer service. The complexity of end-user needs pushed against the limits of the technology – trees of menus sprouted everywhere, and the term “IVR Hell” came to be known.
 
 <p align="center">
-<img src="https://res.cloudinary.com/dbzsk4ytb/image/upload/c_scale,h_300/v1664814373/blog-images/Speech_Recognition_xtxpru.svg" alt="Speech Recognition" height="300"/></p>
+<img src="https://res.cloudinary.com/dbzsk4ytb/image/upload/c_scale,h_300/v1664814373/blog-images/Speech_Recognition_xtxpru.svg" alt="Speech Recognition" height="300" alt="speech recognition"/></p>
 
 The next major step forward was the advent of speech recognition technology. Instead of requiring callers to press buttons, systems could accept spoken input. Speech recognition technology had its limitations: allowing a wide variety of inputs required speech systems trained to a single voice. Dictation-type systems where you could talk instead of type could use this technology, but not in call centers. Speech recognition technology could recognize speech input from a general population only if a small number of specific words were allowed as input. As technology progressed, the number of different words the system could match against the input increased – but it always had some upper limit. 
 
@@ -30,7 +30,7 @@ The next major step forward was the advent of speech recognition technology. Ins
 Allowing speech input was an improvement over DTMF-only IVR systems. System designers could develop natural speech input patterns, especially for “form filling” use cases where multiple data elements were needed to complete a transaction. Caller acceptance was higher than with DTMF-only systems. But, technology acquisition, development, and upkeep costs could be three times higher than a DTMF-only system – and the technical limitations still frustrated callers. These IVR systems still forced callers to figure out how to get through the prompts – to put their problems into words the system designer used. Well-designed systems made that more manageable – but too many systems struggled to provide a good user experience. 
 
 <p align="center">
-<img src="https://res.cloudinary.com/dbzsk4ytb/image/upload/c_scale,h_300/v1664816458/blog-images/AdobeStock_183299703_uhku4a.jpg" alt="Chatbot" height="300"/></p>
+<img src="https://res.cloudinary.com/dbzsk4ytb/image/upload/c_scale,h_300/v1664816458/blog-images/AdobeStock_183299703_uhku4a.jpg" alt="Chatbot" height="300" alt="what can I help you with?"/></p>
 
 So this brings us to where AI became involved. Two distinct industry trends converged, bringing AI-powered systems to the contact center. The first was web chat: pop-up boxes on websites connected users to live human agents. These systems were a hit with both end users and businesses, and web chat quickly overtook email as the primary channel for text-based communication in the Contact Center. Companies quickly recognized the need for automation of these interactions, the all-text communication path was straightforward and cheap to build, and the “dumb chatbot” was born. A desire to create better automated text interactions drove the adoption of AI systems with our first describable advantage of AI systems used in the contact center.
 

@@ -51,7 +51,7 @@ function cardClick(event: MouseEvent) {
 						<a class="heading_link" onclick="cardClick" href={"/" + post.slug}>
 							{post.data.title}
 						</a>
-						<img src={post.data.hero} />
+						<img src={post.data.hero} alt={post.data.title} />
 						<div class="card_content">{post.data.summary}...</div>
 					</div>
 				))

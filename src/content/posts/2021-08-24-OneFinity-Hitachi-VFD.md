@@ -51,11 +51,11 @@ ModBus settings:
 
 Then, the OneFinity doesn't list "Hitachi" as a VFD option - but the Omron MX2 is a re-badged Hitachi, so its setup worked. Here are the 1F settings:
 
-<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986618/blog-images/Hitachi/tool_config.png" width="75%" />
-<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986632/blog-images/Hitachi/modbus_config_o.png" width="75%" />
-<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986645/blog-images/Hitachi/active_modbus_program.png" width="75%" />
-<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986674/blog-images/Hitachi/modbus_communication.png" width="75%" />
+<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986618/blog-images/Hitachi/tool_config.png" width="75%" alt="Hitachi tool configuration"/>
+<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986632/blog-images/Hitachi/modbus_config_o.png" width="75%" alt="Hitachi Modbus configuration"/>
+<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986645/blog-images/Hitachi/active_modbus_program.png" width="75%" alt="activate Hitachi Modbus program"/>
+<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986674/blog-images/Hitachi/modbus_communication.png" width="75%" alt="Hitachi modbus communication settings"/>
 
 Here are a few pictures of the VFD wiring:
-<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986412/blog-images/Hitachi/_MG_3559.jpg" width="75%" />
-<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986412/blog-images/Hitachi/_MG_3560.jpg" width="75%" />
+<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986412/blog-images/Hitachi/_MG_3559.jpg" width="75%" alt="Hitachi VFD wiring diagram"/>
+<img class="center" src="https://res.cloudinary.com/dbzsk4ytb/image/upload/v1631986412/blog-images/Hitachi/_MG_3560.jpg" width="75%" alt="Hitachi VFD wiring diagram #2"/>
