@@ -48,9 +48,9 @@ function formatDate(date: Date) {
       filteredPosts.map((post) => (
         <div
           class="category-item"
-          onclick={"window.location.href = " + post.slug}
+          onclick={"window.location.href = /" + post.slug}
         >
-          <a href={post.slug}>{post.data.title}</a>
+          <a href={"/" + post.slug}>{post.data.title}</a>
           <br />
           <p>{formatDate(post.data.date)}</p>
           <img src={post.data.hero} alt={post.data.title} />

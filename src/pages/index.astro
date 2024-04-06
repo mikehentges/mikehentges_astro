@@ -39,16 +39,16 @@ function cardClick(event: MouseEvent) {
 				recentPosts.map((post) => (
 					<div
 						class="home_card"
-						onclick={"window.location.href = " + post.slug}
+						onclick={"window.location.href = /" + post.slug}
 					>
 						<a
 							class="category_link"
 							onclick="cardClick"
-							href={post.data.categories}
+							href={"/" + post.data.categories}
 						>
 							{post.data.categories}
 						</a>
-						<a class="heading_link" onclick="cardClick" href={post.slug}>
+						<a class="heading_link" onclick="cardClick" href={"/" + post.slug}>
 							{post.data.title}
 						</a>
 						<img src={post.data.hero} />
