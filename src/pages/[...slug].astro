@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post: CollectionEntry<"posts">) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"posts">;
+const post = Astro.props;
+const { Content } = await post.render();
+const postDate = new Date(post.data.date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const hasAttrib = post.data.attrib !== undefined;
+---
+
+<BaseLayout pageTitle={post.data.title}>
+  <section class="post-section">
+    <img class="hero" src={post.data.hero} alt={post.data.title} />
+    {hasAttrib && <div>{post.data.attrib}</div>}
+    <h2>{post.data.title}</h2>
+    <u><p>{postDate}</p></u>
+    <Content />
+    <div>
+      Want to encourage more content like this? Please consider <a
+        href="https://www.buymeacoffee.com/mikehentges"
+        >buying me a cup of coffee!</a
+      >
+      <p></p>
+    </div>
+  </section>
+</BaseLayout>

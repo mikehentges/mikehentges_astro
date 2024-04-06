@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Raspberry Pi Wireless Thermostat - in Rust
 date: 2022-10-04
 categories: programming

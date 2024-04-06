@@ -9,6 +9,7 @@ const postsCollection = defineCollection({
         hero: z.string(),
         categories: z.string(),
         summary: z.string(),
+        attrib: z.string().optional(),
     })
 });
 // Export a single `collections` object to register your collection(s)

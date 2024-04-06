@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Google DialogFlow – capturing numbers with voice
 date: 2022-08-12
 categories: ai

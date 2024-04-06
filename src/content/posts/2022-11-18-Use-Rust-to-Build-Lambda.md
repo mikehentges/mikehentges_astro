@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Rust, Lambda, and DynamoDB
 date: 2022-11-18
 categories: programming

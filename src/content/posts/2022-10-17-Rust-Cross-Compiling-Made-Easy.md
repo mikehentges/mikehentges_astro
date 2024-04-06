@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Rust Cross Compiling Made Easy
 date: 2022-10-17
 categories: programming

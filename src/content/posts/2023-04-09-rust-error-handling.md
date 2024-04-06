@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Rust's great error handling capability.
 date: 2023-04-09
 categories: programming

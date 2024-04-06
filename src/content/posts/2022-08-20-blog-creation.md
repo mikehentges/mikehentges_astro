@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Creating a new blog with Jekyll and GitHub Pages
 date: 2022-08-12
 categories: programming

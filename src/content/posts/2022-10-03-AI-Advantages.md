@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Real Advantages of AI
 date: 2022-10-03
 categories: ai

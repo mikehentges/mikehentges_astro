@@ -1,0 +1,70 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const posts = await getCollection("posts");
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  const uniqueCategories = [
+    ...new Set(posts.flatMap((post) => post.data.categories).flat()),
+  ];
+  return uniqueCategories.map((category: string) => ({
+    params: { category: category },
+  }));
+}
+const { category } = Astro.params;
+
+const filteredPosts: CollectionEntry<"posts">[] = posts
+  .sort(compare_post_dates)
+  .filter((post) => post.data.categories.includes(category));
+
+function compare_post_dates(
+  a: CollectionEntry<"posts">,
+  b: CollectionEntry<"posts">,
+) {
+  if (a.data.date < b.data.date) {
+    return 1;
+  }
+  if (a.data.date > b.data.date) {
+    return -1;
+  }
+  return 0;
+}
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+---
+
+<BaseLayout pageTitle="category title">
+  <div class="category-list">
+    <h1>My {category} posts</h1>
+    {
+      filteredPosts.map((post) => (
+        <div
+          class="category-item"
+          onclick={"window.location.href = " + post.slug}
+        >
+          <a href={post.slug}>{post.data.title}</a>
+          <br />
+          <p>{formatDate(post.data.date)}</p>
+          <img src={post.data.hero} alt={post.data.title} />
+          <div class="category-content">{post.data.summary}</div>
+          <hr />
+        </div>
+      ))
+    }
+    <div>
+      Want to encourage more content like this? Please consider <a
+        href="https://www.buymeacoffee.com/mikehentges"
+        >buying me a cup of coffee!</a
+      >
+      <p></p>
+    </div>
+  </div>
+</BaseLayout>

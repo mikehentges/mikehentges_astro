@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Hitachi VFD for OneFinity CNC
 date: 2021-08-24
 categories: woodworking

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Why Rust is so Great – Reason 1, The Borrow Checker
 date: 2022-11-09
 categories: programming

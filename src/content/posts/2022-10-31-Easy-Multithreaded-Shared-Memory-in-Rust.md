@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Easy multi-threaded shared memory in rust
 date: 2022-10-31
 categories: programming
