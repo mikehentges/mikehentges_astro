@@ -1,0 +1,7 @@
+# Deferred Work
+
+## Deferred from: code review of 1-1-project-initialization-and-toolchain (2026-04-02)
+
+- No `404.astro` page — old catch-all route deleted, default Astro 404 will show for any unmatched URL. Consider adding a branded 404 page in a future story.
+- No redirects for old URL structure — posts moved from `/<slug>` to `/blog/<slug>`, all external links and SEO break. Address in Story 3.4 (content migration) or Story 1.6 (deployment config).
+- `/favicon.ico` requests will 404 — `favicon.svg` exists and works for modern browsers, but some tools/browsers still request `.ico` by convention. Consider adding a favicon.ico or redirect.

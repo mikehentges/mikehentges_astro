@@ -1,1 +1,3 @@
 User-agent: * Disallow:
+
+Sitemap: https://hentges.ai/sitemap-index.xml
