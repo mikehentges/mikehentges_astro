@@ -17,8 +17,11 @@ const { title = 'Hentges.AI' } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-background text-text-primary">
-    <main>
-      <slot />
-    </main>
+    <a href="#content" class="skip-link">Skip to content</a>
+    <div class="mx-auto max-w-[1200px] px-6 md:px-8">
+      <main id="content" tabindex="-1">
+        <slot />
+      </main>
+    </div>
   </body>
 </html>

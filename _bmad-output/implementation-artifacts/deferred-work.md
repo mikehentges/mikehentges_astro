@@ -10,3 +10,7 @@
 
 - h4/h5/h6 have no explicit font-size — after Tailwind preflight reset they render at body text size. The UX type scale only defines 7 levels (none for h4-h6). Add sizes when content actually uses these heading levels.
 - `text-text-primary` utility class is awkward due to `--color-text-primary` token naming. Functional but confusing. Consider renaming to `--color-foreground` or `--color-body` in a future token revision.
+
+## Deferred from: code review of 1-3-base-layout-and-accessibility-foundations (2026-04-03)
+
+- The 1200px `max-w` container in BaseLayout wraps `<main>`. Future full-bleed components (HeroChapter, POVSection full-width backgrounds) will need a breakout pattern (e.g. `w-screen -mx` or restructuring). Address when implementing stories 2.1/2.2.
