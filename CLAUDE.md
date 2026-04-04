@@ -47,6 +47,9 @@ This is a personal blog/portfolio site (Hentges.AI) built with **Astro 6** as a 
 - `output: 'static'` — no SSR, no Cloudflare adapter needed
 - No server-side rendering or API routes
 
+### Git
+- do not automatically commit changes to Git, or perform any other destructive git command. User will handle all changes to the git repository. You may add files, but no commits or PRs.
+
 DISTILLED_AESTHETICS_PROMPT = """
 <frontend_aesthetics>
 You tend to converge toward generic, "on distribution" outputs. In frontend design, this creates what users call the "AI slop" aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight. Focus on:

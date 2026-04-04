@@ -18,3 +18,8 @@
 ## Deferred from: code review of 1-5-footer-and-link-hierarchy (2026-04-04)
 
 - Custom link styles (`.link-cta`, `.link-text`, prose inline links) use CSS `background-color` and `border-bottom` which are stripped in Windows High Contrast / Forced Colors Mode. Native `text-decoration` is preserved but custom borders are not. Consider adding `@media (forced-colors: active)` fallbacks when the design system matures or accessibility audit is performed.
+
+## Deferred from: code review of 1-6-cloudflare-pages-deployment (2026-04-04)
+
+- No `Content-Security-Policy` header — the static site is a good candidate for a tight CSP (e.g., `default-src 'self'`). Add when the full asset pipeline (images, fonts, inline styles) is finalized to avoid false blocks during development.
+- No `Permissions-Policy` header — consider adding `camera=(), microphone=(), geolocation=()` as standard hardening once the site is feature-complete.
