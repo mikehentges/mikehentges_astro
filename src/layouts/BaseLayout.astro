@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import StickyNav from '../components/StickyNav.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -18,13 +19,14 @@ const { title = 'Hentges.AI', transparent = false } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="bg-background text-text-primary">
+  <body class="flex min-h-screen flex-col bg-background text-text-primary">
     <a href="#content" class="skip-link">Skip to content</a>
     <StickyNav transparent={transparent} />
-    <div class="mx-auto max-w-[1200px] px-6 md:px-8">
+    <div class="mx-auto max-w-[1200px] flex-1 px-6 md:px-8">
       <main id="content" tabindex="-1">
         <slot />
       </main>
     </div>
+    <Footer />
   </body>
 </html>

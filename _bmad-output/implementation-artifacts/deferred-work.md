@@ -14,3 +14,7 @@
 ## Deferred from: code review of 1-3-base-layout-and-accessibility-foundations (2026-04-03)
 
 - The 1200px `max-w` container in BaseLayout wraps `<main>`. Future full-bleed components (HeroChapter, POVSection full-width backgrounds) will need a breakout pattern (e.g. `w-screen -mx` or restructuring). Address when implementing stories 2.1/2.2.
+
+## Deferred from: code review of 1-5-footer-and-link-hierarchy (2026-04-04)
+
+- Custom link styles (`.link-cta`, `.link-text`, prose inline links) use CSS `background-color` and `border-bottom` which are stripped in Windows High Contrast / Forced Colors Mode. Native `text-decoration` is preserved but custom borders are not. Consider adding `@media (forced-colors: active)` fallbacks when the design system matures or accessibility audit is performed.
