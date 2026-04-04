@@ -1,5 +1,5 @@
 # generated: 2026-04-02
-# last_updated: 2026-04-04
+# last_updated: 2026-04-05
 # project: mikehentges_astro
 # project_key: NOKEY
 # tracking_system: file-system
@@ -35,9 +35,9 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2026-04-02
-last_updated: 2026-04-04
+last_updated: 2026-04-05
 project: mikehentges_astro
-# last_operational_update: 2026-04-04 epic-1 completed, all 6 stories done
+# last_operational_update: 2026-04-05 epic-1 retrospective completed
 project_key: NOKEY
 tracking_system: file-system
 story_location: "{project-root}/_bmad-output/implementation-artifacts"
@@ -51,7 +51,7 @@ development_status:
   1-4-stickynav-component: done
   1-5-footer-and-link-hierarchy: done
   1-6-cloudflare-pages-deployment: done
-  epic-1-retrospective: optional
+  epic-1-retrospective: done
 
   # Epic 2: Homepage Experience
   epic-2: backlog
