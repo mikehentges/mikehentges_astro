@@ -41,7 +41,7 @@ I intended this to be a hobby project – not a commercial production-ready impl
 
 The following diagram depicts the system architecture for the solution:
 
-<img src="./sys-arch.png" alt="system diagram for thermostat application" />
+![system diagram for thermostat application](./sys-arch.png)
 
 The subsystems of the application are as follows:
 

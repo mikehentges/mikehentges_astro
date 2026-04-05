@@ -19,7 +19,7 @@ The use case for my application is to keep track of my Raspberry Pi thermostat a
 
 I picked [DynamoDB on AWS](https://aws.amazon.com/dynamodb/) as the database platform. My data needs fit easily inside DynamoDB's free tier, and DynamoDB is an effective place to push IoT time series data. Instead of directly connecting the Pi application to the Dynamo database, I chose an HTTP-based service layer for the interface between the Raspberry PI and AWS. I've found HTTP services to be more resilient than direct DB connections – HTTP's stateless nature makes it self-correcting across network outages. Pushing data through to a DB is an excellent job for a Lambda function – and with AWS recently publishing a Rust SDK, I took the opportunity to build out the Lambda function as a Rust application. Here's a picture of how the pieces fit together that we are going to examine:
 
-<img class="center" src="./lambda-architecture.png" alt="lambda architecture" />
+![lambda architecture](./lambda-architecture.png)
 
 There are three main parts to the application. First, the main application is thermostat_pi, the client that creates the data we move to the database. Under this project is the Lambda function project, named push_temp. Lastly, the temp_data project holds a definition of a data transport API. All three projects are on GitHub under the thermostat_pi application.
 
@@ -53,7 +53,7 @@ serde = {version = "1", features = ["derive"]}
 
 I then defined a corresponding DynamoDB database to hold this information. I decided on a Partition Key of "day" for the time-series data, which allows for retrieving a day's worth of data without scanning the entire table. I also created a sort key for the date/time. This key structure will allow efficient read access to the data when I want to set up an alarm or graph historical data. I don't have much experience with DynamoDB, so there could be a more efficient way to solve this problem – but what I have works for me. Here's what the DynamoDB table will look like when we are finished:
 
-<img class="center" src="./dynamodb-table.png" alt="DynamoDB table" />
+![DynamoDB table](./dynamodb-table.png)
 
  
 The Record_Day and Record_Date keys are strings to DynamoDB. The Record_Date format is RFC3339, which the Rust standard time package supports. It creates a string that can sort the time values correctly by alphabetical sorting. 
@@ -374,7 +374,7 @@ curl -X POST https://<endpoint>.lambda-url.us-east-2.on.aws/ \
 
 You can use the DynamoDB console to see your new record in the database:
 
-<img class="center" src="./dynamodb-result.png" alt="DynamoDB table result" />
+![DynamoDB table result](./dynamodb-result.png)
  
 To make application updates to the code after the initial deployment, I created a deploy target in my justfile for the commands needed to deploy an updated application. These commands rely on the AWS CLI to be installed and configured for the same region as the Lambda function.
 
