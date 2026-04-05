@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  date: string;
+  datetime: string;
+  title: string;
+  summary: string;
+}
+
+const { href, date, datetime, title, summary } = Astro.props;
+---
+
+<a href={href} class="group block border border-border bg-background p-6 transition-all duration-300 ease-out hover:-translate-y-[3px] hover:border-accent">
+  <time datetime={datetime} class="font-code text-[length:var(--font-size-small)] font-[number:var(--font-weight-small)] leading-[var(--line-height-small)] text-accent">
+    {date}
+  </time>
+  <h3 class="mt-2 font-display text-lg font-semibold text-text-primary">
+    {title}
+  </h3>
+  <p class="mt-2 text-base leading-relaxed text-text-secondary">
+    {summary}
+  </p>
+</a>
