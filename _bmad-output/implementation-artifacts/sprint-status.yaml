@@ -37,7 +37,7 @@
 generated: 2026-04-02
 last_updated: 2026-04-05
 project: mikehentges_astro
-# last_operational_update: 2026-04-05 epic-1 retrospective completed
+# last_operational_update: 2026-04-05 story 2-2 chapterlabel and povsection components done
 project_key: NOKEY
 tracking_system: file-system
 story_location: "{project-root}/_bmad-output/implementation-artifacts"
@@ -54,9 +54,9 @@ development_status:
   epic-1-retrospective: done
 
   # Epic 2: Homepage Experience
-  epic-2: backlog
-  2-1-herochapter-component: backlog
-  2-2-chapterlabel-and-povsection-components: backlog
+  epic-2: in-progress
+  2-1-herochapter-component: done
+  2-2-chapterlabel-and-povsection-components: done
   2-3-pillargrid-section: backlog
   2-4-blogcard-and-recent-writing-section: backlog
   2-5-ctasection-component: backlog

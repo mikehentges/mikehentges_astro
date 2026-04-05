@@ -1,0 +1,51 @@
+---
+---
+
+<section aria-labelledby="hero-heading" class="flex min-h-[80vh] flex-col items-center justify-center px-6 text-center md:min-h-[90vh]">
+  <h1 id="hero-heading" class="hero-animate font-display text-[length:var(--font-size-hero)] font-[number:var(--font-weight-hero)] leading-[var(--line-height-hero)]">
+    Help your team create more value, solve harder problems, and <span class="text-accent">use AI to its full potential</span>.
+  </h1>
+
+  <p class="hero-animate hero-delay-1 mt-6 max-w-[680px] text-text-secondary md:mt-8 md:text-lg">
+    I'm Mike Hentges — 20+ years building technology organizations, now helping leaders navigate what AI actually changes.
+  </p>
+
+  <p class="hero-animate hero-delay-2 mt-auto pb-8 font-code text-[length:var(--font-size-small)] font-[number:var(--font-weight-small)] leading-[var(--line-height-small)] text-text-secondary">
+    Scroll to explore <span aria-hidden="true">↓</span>
+  </p>
+</section>
+
+<style>
+  .hero-animate {
+    opacity: 0;
+    transform: translateY(1rem);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .hero-delay-1 {
+    animation-delay: 0.3s;
+  }
+
+  .hero-delay-2 {
+    animation-delay: 0.8s;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-animate {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
