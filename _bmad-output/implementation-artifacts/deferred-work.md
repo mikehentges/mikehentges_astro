@@ -32,3 +32,7 @@
 ## Deferred from: code review of 3-2-blog-post-page-with-authorbio (2026-04-05)
 
 - Hero image alt text is generic (`Hero image for {title}`). Consider adding a `heroAlt` field to the content schema for meaningful image descriptions per WCAG best practices.
+
+## Deferred from: code review of 4-1-about-page (2026-04-05)
+
+- No `<meta name="description">` or Open Graph tags on the About page — BaseLayout currently has no SEO metadata props. Will be addressed in Epic 5 (Story 5-1: SEOHead component).

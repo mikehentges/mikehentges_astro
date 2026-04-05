@@ -1,7 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
 ---
 
 <BaseLayout title="About | Hentges.AI">
-  <h1>About</h1>
+  <article aria-labelledby="about-heading" class="prose-width py-12 md:py-16">
+    <h1 id="about-heading" class="font-display text-4xl font-bold leading-tight md:text-[2.5rem]">
+      I build things that work in production.
+    </h1>
+
+    <div class="prose prose-lg mt-8 max-w-none">
+      <p>
+        Most of my career has been spent inside the machine — not consulting about it, not theorizing about it, but building technology organizations and making them deliver.
+      </p>
+
+      <h2>Twenty years inside enterprise delivery</h2>
+
+      <p>
+        I spent two decades as CTO of a Fortune 500 systems integrator, leading teams that built and deployed complex contact center solutions for some of the largest companies in the world. The work was integration-heavy, deadline-driven, and unforgiving. You learned to read systems — not just the technology, but the organizations around them. Which stakeholder's requirements were actually requirements. Which architectural decisions would survive the first encounter with production data. Where the real risks hid while everyone argued about the obvious ones.
+      </p>
+
+      <p>
+        That kind of experience doesn't teach you to be clever. It teaches you to be right — or at least to know when you're guessing and plan accordingly.
+      </p>
+
+      <h2>Then I went to the factory floor</h2>
+
+      <p>
+        After twenty years in enterprise services, I took a sharp left turn and became IT Director at a mid-sized manufacturer. Different world. ERP systems, MRP runs, shop floor data, supply chain logistics — none of which I'd touched before. Within three years, I was the company's ERP expert.
+      </p>
+
+      <p>
+        That experience stripped away the last of my consulting instincts. Manufacturing doesn't care about your framework or your methodology. The production line either runs or it doesn't. The inventory numbers are either right or they're wrong. It was a masterclass in what "production-grade" actually means when the stakes are physical, not just financial.
+      </p>
+
+      <h2>Now: making AI actually work</h2>
+
+      <p>
+        Today I advise technology leaders on the question that keeps surfacing in every boardroom and every engineering standup: <em>what does AI actually change for us?</em>
+      </p>
+
+      <p>
+        My answer isn't what most people expect. AI doesn't replace the need for good architecture, clear requirements, or experienced judgment. It amplifies all of those things. The teams that get the most from AI are the ones that already know how to build — they just move faster now, see patterns sooner, and ship with more confidence.
+      </p>
+
+      <p>
+        The teams that struggle are the ones hoping AI will compensate for problems that were already there: unclear strategy, fragile systems, or a gap between what the business needs and what the technology organization can deliver.
+      </p>
+
+      <p>
+        I help close that gap. Not with a pitch deck, but with the perspective of someone who has spent a career on both sides of it — building the systems <em>and</em> running the operations they support.
+      </p>
+    </div>
+  </article>
+  <CTASection />
 </BaseLayout>
