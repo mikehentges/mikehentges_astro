@@ -13,7 +13,7 @@
 
 ## Deferred from: code review of 1-3-base-layout-and-accessibility-foundations (2026-04-03)
 
-- The 1200px `max-w` container in BaseLayout wraps `<main>`. Future full-bleed components (HeroChapter, POVSection full-width backgrounds) will need a breakout pattern (e.g. `w-screen -mx` or restructuring). Address when implementing stories 2.1/2.2.
+- ~~The 1200px `max-w` container in BaseLayout wraps `<main>`. Future full-bleed components (HeroChapter, POVSection full-width backgrounds) will need a breakout pattern.~~ **RESOLVED in Epic 2:** POVSection uses `width: 100vw; margin-left: calc(50% - 50vw)` breakout; other sections defer to BaseLayout's container. Body has `overflow-x: hidden`.
 
 ## Deferred from: code review of 1-5-footer-and-link-hierarchy (2026-04-04)
 
@@ -23,3 +23,12 @@
 
 - No `Content-Security-Policy` header — the static site is a good candidate for a tight CSP (e.g., `default-src 'self'`). Add when the full asset pipeline (images, fonts, inline styles) is finalized to avoid false blocks during development.
 - No `Permissions-Policy` header — consider adding `camera=(), microphone=(), geolocation=()` as standard hardening once the site is feature-complete.
+
+## Deferred from: code review of 3-1-content-collection-and-schema (2026-04-05)
+
+- Content collection schema uses `z.string()` for title and summary which allows empty strings. Consider adding `.min(1)` if empty frontmatter fields become an authoring problem.
+- No `draft` field in the content schema — no way to hide work-in-progress posts from being published. Add if needed when content workflow matures.
+
+## Deferred from: code review of 3-2-blog-post-page-with-authorbio (2026-04-05)
+
+- Hero image alt text is generic (`Hero image for {title}`). Consider adding a `heroAlt` field to the content schema for meaningful image descriptions per WCAG best practices.

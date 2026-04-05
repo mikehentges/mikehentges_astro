@@ -17,10 +17,10 @@ This is a personal blog/portfolio site (Hentges.AI) built with **Astro 6** as a 
 ### Content System
 - Blog posts will live in `src/content/posts/` as Markdown files with YAML frontmatter
 - Content collection schema will be defined in `content.config.ts` (Astro 6 convention) using Zod
-- Currently in scaffolding phase — content system setup is a future story
+- Content system setup is Epic 3 (not yet started)
 
 ### Routing
-- `src/pages/index.astro` — Home page (placeholder)
+- `src/pages/index.astro` — Home page (complete: hero, POV, pillars, CTA, scroll animations)
 - `src/pages/blog/index.astro` — Blog listing (placeholder)
 - `src/pages/blog/[slug].astro` — Individual blog posts (placeholder with `getStaticPaths()` stub)
 - `src/pages/about.astro` — About page (placeholder)
@@ -28,8 +28,8 @@ This is a personal blog/portfolio site (Hentges.AI) built with **Astro 6** as a 
 
 ### Styling
 - **Tailwind CSS v4** via `@tailwindcss/vite` plugin — CSS-first configuration, no `tailwind.config.ts`
-- `src/styles/global.css` imports Tailwind and sets font-family assignments
-- Design tokens will be defined via `@theme` blocks in `global.css` (future story)
+- `src/styles/global.css` imports Tailwind, defines design tokens via `@theme` block, sets font-family assignments
+- 8 color tokens, type scale, link hierarchy classes defined in `global.css`
 - No SCSS — Tailwind utility classes only, no `@apply`
 - Prettier configured with tabWidth: 2
 
@@ -39,12 +39,24 @@ This is a personal blog/portfolio site (Hentges.AI) built with **Astro 6** as a 
 - **JetBrains Mono** (code) — Google Fonts via Astro Fonts API
 - All fonts downloaded at build time and self-hosted — zero external CDN requests
 
+### Components
+- `HeroChapter.astro` — Full-viewport hero with staggered CSS fade-up animation, `prefers-reduced-motion` support
+- `ChapterLabel.astro` — Reusable monospace amber section label (props: `text`, optional `id`)
+- `POVSection.astro` — Full-bleed surface-background blockquote with chapter label
+- `PillarGrid.astro` — 3-column CSS grid (1-col mobile) with gap-based borders, 3 value pillars
+- `BlogCard.astro` — Post card with date/title/summary, entire card as `<a>`, hover lift + amber border
+- `RecentWriting.astro` — Shows up to 3 BlogCards, self-hides when no posts, "View all" link when >3
+- `CTASection.astro` — "Let's talk." closing section with email link, reusable
+- `StickyNav.astro` — Sticky navigation with transparent-to-solid transition on homepage
+- `Footer.astro` — Minimal footer with wordmark and copyright
+
 ### Layouts
-- `BaseLayout.astro` — Root HTML wrapper with `<html>`, `<head>`, `<body>`, `<main>` landmark, imports `global.css`
+- `BaseLayout.astro` — Root HTML wrapper with `<html>`, `<head>`, `<body>`, `<main>` landmark, imports `global.css`, `no-js` class for progressive enhancement
 
 ### Deployment
-- Static site targeting Cloudflare Pages (deployment config is a future story)
+- Static site deployed to Cloudflare Pages with auto-deploy on push to main
 - `output: 'static'` — no SSR, no Cloudflare adapter needed
+- `packageManager` field in package.json pins pnpm version for Cloudflare builds
 - No server-side rendering or API routes
 
 ### Git
