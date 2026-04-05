@@ -1,13 +1,51 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AuthorBio from "../../components/AuthorBio.astro";
 
-export function getStaticPaths() {
-  return [{ params: { slug: 'placeholder' } }];
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }
 
-const { slug } = Astro.params;
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const words = post.body?.split(/\s+/).length ?? 0;
+const readingTime = Math.max(1, Math.ceil(words / 200));
+
+const dateFormatted = post.data.date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const dateISO = post.data.date.toISOString().split("T")[0];
 ---
 
-<BaseLayout title={`Blog Post: ${slug} | Hentges.AI`}>
-  <h1>Blog Post: {slug}</h1>
+<BaseLayout title={`${post.data.title} | Hentges.AI`}>
+  <article class="prose-width py-12 md:py-16">
+    <Image
+      src={post.data.hero}
+      alt={`Hero image for ${post.data.title}`}
+      width={1200}
+      height={630}
+      class="mb-8 w-full rounded-lg"
+    />
+    <h1 class="font-display text-4xl font-bold leading-tight md:text-[2.5rem]">
+      {post.data.title}
+    </h1>
+    <p class="mt-3 font-code text-sm text-text-secondary">
+      <time datetime={dateISO}>{dateFormatted}</time>
+      <span class="mx-2">&middot;</span>
+      {readingTime} min read
+    </p>
+    <div class="prose prose-lg mt-8 max-w-none">
+      <Content />
+    </div>
+    <AuthorBio />
+  </article>
 </BaseLayout>

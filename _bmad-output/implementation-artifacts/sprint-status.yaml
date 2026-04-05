@@ -37,7 +37,7 @@
 generated: 2026-04-02
 last_updated: 2026-04-05
 project: mikehentges_astro
-# last_operational_update: 2026-04-05 story 2-2 chapterlabel and povsection components done
+# last_operational_update: 2026-04-05 epic 2 complete - all 6 stories done
 project_key: NOKEY
 tracking_system: file-system
 story_location: "{project-root}/_bmad-output/implementation-artifacts"
@@ -54,21 +54,21 @@ development_status:
   epic-1-retrospective: done
 
   # Epic 2: Homepage Experience
-  epic-2: in-progress
+  epic-2: done
   2-1-herochapter-component: done
   2-2-chapterlabel-and-povsection-components: done
-  2-3-pillargrid-section: backlog
-  2-4-blogcard-and-recent-writing-section: backlog
-  2-5-ctasection-component: backlog
-  2-6-homepage-scroll-animations: backlog
+  2-3-pillargrid-section: done
+  2-4-blogcard-and-recent-writing-section: done
+  2-5-ctasection-component: done
+  2-6-homepage-scroll-animations: done
   epic-2-retrospective: optional
 
   # Epic 3: Blog & Content System
-  epic-3: backlog
-  3-1-content-collection-and-schema: backlog
-  3-2-blog-post-page-with-authorbio: backlog
-  3-3-blog-listing-page: backlog
-  3-4-content-migration-and-hobby-retirement: backlog
+  epic-3: done
+  3-1-content-collection-and-schema: done
+  3-2-blog-post-page-with-authorbio: done
+  3-3-blog-listing-page: done
+  3-4-content-migration-and-hobby-retirement: done
   epic-3-retrospective: optional
 
   # Epic 4: About & Contact Pages
