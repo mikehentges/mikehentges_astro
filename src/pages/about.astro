@@ -3,7 +3,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CTASection from '../components/CTASection.astro';
 ---
 
-<BaseLayout title="About | Hentges.AI">
+<BaseLayout
+  title="About | Hentges.AI"
+  description="Mike Hentges: 20+ years as CTO at a Fortune 500 systems integrator, 3 years as IT Director in manufacturing, and deep applied AI expertise. Building the right thing, the right way."
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Mike Hentges",
+    url: "https://hentges.ai",
+    jobTitle: "AI Practitioner & Technology Advisor",
+    description: "20+ years as CTO of a Fortune 500 systems integrator, 3 years as IT Director at a mid-sized manufacturer, and deep applied AI expertise.",
+    sameAs: ["https://www.linkedin.com/in/mikehentges/"],
+    knowsAbout: ["Artificial Intelligence", "Enterprise Architecture", "Manufacturing Operations", "Technology Leadership"],
+  }}
+>
   <article aria-labelledby="about-heading" class="prose-width py-12 md:py-16">
     <h1 id="about-heading" class="font-display text-4xl font-bold leading-tight md:text-[2.5rem]">
       I build things that work in production.

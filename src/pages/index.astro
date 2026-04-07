@@ -24,7 +24,28 @@ const recentPosts = allPosts.map((post) => ({
 }));
 ---
 
-<BaseLayout title="Home | Hentges.AI" transparent={true}>
+<BaseLayout
+  title="Hentges.AI — Build the Right Thing, the Right Way"
+  description="Mike Hentges helps technology leaders navigate AI adoption, enterprise architecture, and production systems. 20+ years CTO experience, real-world AI practitioner."
+  transparent={true}
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Hentges.AI",
+      url: "https://hentges.ai",
+      description: "AI practitioner, enterprise systems builder, and manufacturing operations leader helping organizations build the right thing, the right way.",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Mike Hentges",
+      url: "https://hentges.ai",
+      jobTitle: "AI Practitioner & Technology Advisor",
+      sameAs: ["https://www.linkedin.com/in/mikehentges/"],
+    },
+  ]}
+>
   <HeroChapter />
   <div class="scroll-reveal">
     <POVSection />
