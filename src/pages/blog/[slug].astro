@@ -26,13 +26,39 @@ const dateFormatted = post.data.date.toLocaleDateString("en-US", {
 const dateISO = post.data.date.toISOString().split("T")[0];
 ---
 
-<BaseLayout title={`${post.data.title} | Hentges.AI`}>
+<BaseLayout
+  title={`${post.data.title} | Hentges.AI`}
+  description={post.data.summary}
+  ogImage={post.data.hero.src}
+  ogType="article"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.data.title,
+    description: post.data.summary,
+    datePublished: post.data.date.toISOString(),
+    author: {
+      "@type": "Person",
+      name: "Mike Hentges",
+      url: "https://hentges.ai/about",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Mike Hentges",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://hentges.ai/blog/${post.id}`,
+    },
+  }}
+>
   <article class="prose-width py-12 md:py-16">
     <Image
       src={post.data.hero}
       alt={`Hero image for ${post.data.title}`}
       width={1200}
       height={630}
+      loading="eager"
       class="mb-8 w-full rounded-lg"
     />
     <h1 class="font-display text-4xl font-bold leading-tight md:text-[2.5rem]">

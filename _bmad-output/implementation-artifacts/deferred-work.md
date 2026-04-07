@@ -36,3 +36,8 @@
 ## Deferred from: code review of 4-1-about-page (2026-04-05)
 
 - No `<meta name="description">` or Open Graph tags on the About page — BaseLayout currently has no SEO metadata props. Will be addressed in Epic 5 (Story 5-1: SEOHead component).
+
+## Deferred from: code review of 5-1-seohead-component-and-sitemap-configuration (2026-04-06)
+
+- `ogImage` path handling in SEOHead assumes relative paths start with `/`. If a caller passes a relative path without leading slash (e.g., `images/og.jpg`), the URL is malformed. No current callers affected.
+- `canonicalUrl` prop accepted by SEOHead but not forwarded through BaseLayout's Props interface. Pages cannot override canonical URL through the layout. No current need for overrides.

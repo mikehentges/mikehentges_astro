@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalUrl?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const siteUrl = "https://hentges.ai";
+
+const {
+  title,
+  description,
+  ogImage,
+  ogType = "website",
+  canonicalUrl,
+  jsonLd,
+} = Astro.props;
+
+const canonical = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = ogImage
+  ? ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`
+  : undefined;
+
+const jsonLdString = jsonLd
+  ? JSON.stringify(jsonLd).replace(/</g, "\\u003c")
+  : undefined;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content={ogType} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content={ogImageUrl ? "summary_large_image" : "summary"} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
+<!-- JSON-LD Structured Data -->
+{jsonLdString && (
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={jsonLdString}
+  />
+)}
